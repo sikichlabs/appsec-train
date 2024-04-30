@@ -30,7 +30,7 @@ If your VM has access to the internet, it may attempt to update itself. You are 
   
 
 To access the tools, you will find shortcuts conveniently setup in the Favorites tab of the menu:  
-![](files/image.png)  
+![](Files/image.png)  
 
 - Burp Suite Community Edition (Burp) - This will be our primary tool for completing the crAPI challenges.
 - Tabby - This is a user-friendly terminal application
