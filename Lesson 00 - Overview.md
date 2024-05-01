@@ -1,10 +1,8 @@
-## 00 - Lessons Overview
+## Lessons Overview
 
 The training is designed to give an introduction to the OWASP Top 10 API Security Risks 2023 for developers. We will review the the Top 10 list and then do a walkthrough using the crAPI application stack. Our focus will be on the specific vulnerabilities that relate directly to developers rather than the architect or infrastructure teams.
 
 For this training we are going to work through the challenges mostly in order but grouping them for discussion purposes.
-
-  
 
 ## Lesson Plan Overview (3 Hours)
 
