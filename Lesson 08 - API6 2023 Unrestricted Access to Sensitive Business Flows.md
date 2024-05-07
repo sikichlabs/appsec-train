@@ -31,7 +31,7 @@ If you were thinking about it, when we completed the previous challenge, we only
 
 6. Look at the Response Header and notice the HTTP methods that are allowed.
 
-   ![image-20240506230600597](file:///C:/Users/Thomas.Freeman/AppData/Roaming/Typora/typora-user-images/image-20240506230600597.png?lastModify=1715108116)
+   ![image-20240506230600597](file:///C:/Users/Thomas.Freeman/\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files/image-20240506230600597.png?lastModify=1715108116)
 
 7. Let's right-click on the request and send it to repeater. Look back at previous labs if necessary to remember how to do this. 
 

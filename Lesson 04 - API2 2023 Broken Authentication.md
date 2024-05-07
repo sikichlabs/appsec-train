@@ -26,17 +26,17 @@ NOTE: We are using the Community Edition of Burp Suite which has throttling buil
 
 1. Open the Burp Suite browser, and click on the down arrow next to the user profile icon and then click on the "logout" menu item.
 
-   ![image-20240506194248655](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506194248655.png)
+   ![image-20240506194248655](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506194248655.png)
 
 2. Enter your email address and tell it to send your OTP.
 
-   ![image-20240506180653969](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506180653969.png)
+   ![image-20240506180653969](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506180653969.png)
 
 3. Now open another tab in your browser and go to http://localhost:8025
 
 4. You will see a webmail portal. Click on the "crAPI OTP" message.
 
-   ![image-20240506180121555](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506180121555.png)
+   ![image-20240506180121555](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506180121555.png)
 
 5. Note that the OTP is only 4 digits.
 
@@ -44,7 +44,7 @@ NOTE: We are using the Community Edition of Burp Suite which has throttling buil
 
 7. Notice that in the Proxy HTTP History window, there is now a POST request to /identity/api/auth/v3/check-otp. And in the request is a JSON section with the email, OTP and password to be used. Since we are going to use this request to guess another user's OTP, right click on this row and click on "Send to Intruder". The request will sit in Intruder while we do some more work to prepare for this attack.
 
-   ![image-20240506181202641](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506181202641.png)
+   ![image-20240506181202641](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506181202641.png)
 
 8. Now lets do the same thing but this time for one of the users we noticed in the "Community" forum response. I am going to use robot001@example.com
 
@@ -52,7 +52,7 @@ NOTE: We are using the Community Edition of Burp Suite which has throttling buil
 
 10. In my case, the OTP is 2709
 
-    ![image-20240506182718044](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506182718044.png)
+    ![image-20240506182718044](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506182718044.png)
 
 11. Now we are all set, go to the "Intruder" window. Make sure that the attack type is "Sniper".
 
@@ -62,17 +62,17 @@ NOTE: We are using the Community Edition of Burp Suite which has throttling buil
 
 14. Now we need to tell Burp Suite where the OTP is that it should change out with incrementing numbers. We do this by highlighing the OTP number and then selecting "Add §". This will put the "§" mark on each side of our OTP number.
 
-    ![image-20240506182845689](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506182845689.png)
+    ![image-20240506182845689](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506182845689.png)
 
 15. Now click on the "Payloads" menu item.
 
 16. We need to change the "Payload type" to Numbers. Make the "From" and "To" be a 5 digit range that includes the OTP you know from the email. (Again, in a real attack, we would not know that number but using the Pro version of Burp Suite would make the attack very quick to search all 9999 numbers.) Finally, change the "Min integer digits" to 4 and select "Start Attack'"
 
-    ![image-20240506182951385](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506182951385.png)
+    ![image-20240506182951385](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506182951385.png)
 
 17. You will see a popup window that will show each request being made. If you note the "Status Code" column, you will see 500 codes for all the failed requests and then you will see a 200 code for the successful request. Click on that row and then click on the response.
 
-    ![image-20240506183149389](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240506183149389.png)
+    ![image-20240506183149389](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506183149389.png)
 
 18. You may notice also that the "Response Received" is much longer for the successful entry. This is the basis for "timing attacks". An attacker may send a lot of requests using different email addresses that they do not know if they are valid or not. If there is a large difference in timing for some of the requests, that typically means that they have discovered valid email addresses that can be used in an attempt to guess passwords or perform password resets.
 

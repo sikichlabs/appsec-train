@@ -23,13 +23,13 @@ In this example, we noticed earlier that the "Contact Mechanic" request sent a h
 
 5. Now change the "mechanic_api" parameter to be "http://ipinfo.io/ip" and send the request.
 
-   ![image-20240507182722134](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240507182722134.png)
+   ![image-20240507182722134](C:\Users\Thomas.Freeman\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240507182722134.png)
 
 6. Notice that we have successfully sent a webquery to ipinfo.io and it has returned the IP address our request came from.
 
 7. There is an additional API endpoint that will only present an error message unless the request originates from the application itself.
 
-   ![image-20240507183013022](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240507183013022.png)
+   ![image-20240507183013022](C:\Users\Thomas.Freeman\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240507183013022.png)
 
 8. If you look at the capitalized letters in the response, you will note that they spell out S S R F. 
 
