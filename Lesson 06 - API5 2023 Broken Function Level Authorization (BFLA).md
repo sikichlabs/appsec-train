@@ -23,13 +23,13 @@ In the last exercise, you saw that we could change the HTTP request. And you not
 
 5. In Repeater, change the PUT request to a DELETE request and click "Send".
 
-   ![image-20240506233401678](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506233401678.png)
+   ![image-20240507190151891](Files/image-20240507190151891.png)
 
 6. In this case, you have to be an Admin to perform this function...or do you.
 
 7. Notice that the request URL has the endpoint "user" in it. What if we change that to admin so that we are using the admin endpoint?
 
-   ![image-20240506233546295](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506233546295.png)
+   ![image-20240507190156025](Files/image-20240507190156025.png)
 
 8. Bingo. We were able to use the video's "DELETE" method to delete the video without proper authorization.
 

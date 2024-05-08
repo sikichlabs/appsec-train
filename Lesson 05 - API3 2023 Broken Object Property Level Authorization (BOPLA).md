@@ -23,11 +23,11 @@ For this second example, we are going to explore the properties of the users vid
 
 3. Click on the three (3) vertical dots and then select upload video.
 
-   ![image-20240506223829668](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506223829668.png)
+   ![image-20240507190133353](Files/image-20240507190133353.png)
 
 4. If you then go back to the Proxy HTTP History window and search for the POST request URL, /identity/api/v2/user/videos, you will see information about the video in the response window.
 
-   ![image-20240506225352300](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506225352300.png)
+   ![image-20240507190136482](Files/image-20240507190136482.png)
 
 5. The information includes internal the "conversion_params" object property. 
 
@@ -51,7 +51,7 @@ For this challenge we will combine a business logic flaw and a mass assignment f
 
 6. Look at the Response Header and notice the HTTP methods that are allowed.
 
-   ![image-20240506230600597](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506230600597.png)
+   ![image-20240507190140469](Files/image-20240507190140469.png)
 
 7. Let's right-click on the request and send it to repeater. Look back at previous labs if necessary to remember how to do this. 
 
@@ -59,7 +59,7 @@ For this challenge we will combine a business logic flaw and a mass assignment f
 
 9. Next change the HTTP Method from "GET" to "PUT" (which is used when modifying an object in REST APIs). Add a simple JSON payload that updates the "status" to "returned". Then click on "Send".
 
-   ![image-20240507151648936](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240507151648936.png)
+   ![image-20240507190144746](Files/image-20240507190144746.png)
 
 10. If everything goes right you will see the status updated and a 200 success code.
 

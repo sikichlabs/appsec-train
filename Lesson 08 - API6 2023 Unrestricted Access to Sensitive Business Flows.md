@@ -31,7 +31,7 @@ If you were thinking about it, when we completed the previous challenge, we only
 
 6. Look at the Response Header and notice the HTTP methods that are allowed.
 
-   ![image-20240506230600597](file:///C:/Users/Thomas.Freeman/\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files/image-20240506230600597.png?lastModify=1715108116)
+   ![image-20240507190205709](Files/image-20240507190205709.png)
 
 7. Let's right-click on the request and send it to repeater. Look back at previous labs if necessary to remember how to do this. 
 
@@ -39,7 +39,7 @@ If you were thinking about it, when we completed the previous challenge, we only
 
 9. Next change the HTTP Method from "GET" to "PUT" (which is used when modifying an object in REST APIs). Add a simple JSON payload that updates the "status" to "returned" and the "quantity" to 100. Then click on "Send".
 
-   ![image-20240507141715413](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240507141715413.png)
+   ![image-20240507190210268](Files/image-20240507190210268.png)
 
 10. If everything goes right you will see the status updated and a 200 success code.
 
@@ -55,7 +55,7 @@ For this second example, we are going to explore the properties of the users vid
 
 1. Using the Burp Suite Proxy HTTP History window, search for the POST request URL, /identity/api/v2/user/videos/(some number), you will see information about the video in the response window.
 
-   ![image-20240507164527804](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240507164527804.png)
+   ![image-20240507190214206](Files/image-20240507190214206.png)
 
 2. The information includes internal the "conversion_params" object property. Lets see if we can craft a request that will modify the parameter.
 
@@ -63,6 +63,6 @@ For this second example, we are going to explore the properties of the users vid
 
 4. Add a conversion parameter of of webm.
 
-   ![image-20240507165108589](C:\Users\Thomas.Freeman\AppData\Roaming\Typora\typora-user-images\image-20240507165108589.png)
+   ![image-20240507190222045](Files/image-20240507190222045.png)
 
 5. Challenge completed.

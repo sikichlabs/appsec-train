@@ -30,7 +30,7 @@ In this case, we will browse to the Community page that contains a forum and the
 
 But if we look at the response we will see:
 
-![image-20240506171328992](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506171328992.png)
+![image-20240507185949942](Files/image-20240507185949942.png)
 
 That is much more information than required. We also note special ids that may prove valuable when communicating to other API endpoints (e.g., authorid, vehicleid, etc.) Using this information, we continue browsing and observe a request that takes a vehicle id as a parameter. We will use one of the vehicle id's we observed in the forum to request information from the vehicle id and gain info on another user's vehicle.
 
@@ -44,13 +44,13 @@ That is much more information than required. We also note special ids that may p
 
 4. Switched back to Burp Suite and open the Proxy Http History tab.
 
-   ![image-20240506125827048](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506125827048.png)
+   ![image-20240507185958544](Files/image-20240507185958544.png)
 
 5. Click on the row that has the /community/api URL.
 
 6. Scroll through the Response.
 
-   ![image-20240506130057972](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506130057972.png)
+   ![image-20240507190002897](Files/image-20240507190002897.png)
 
 7. Notice that each forum post includes all the additional information.
 
@@ -58,23 +58,23 @@ That is much more information than required. We also note special ids that may p
 
 9. Switch back to the browser and browse back to the "Dashboard" and then click on the "Refresh Location" button.
 
-   ![image-20240506132120959](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506132120959.png)
+   ![image-20240507190007650](Files/image-20240507190007650.png)
 
 10. Switch back to Burp Suite Proxy HTTP History tab and you will see several API requests. In particular, there is a request to /identity/api/v2/vehicle/ with some long guid identifier. If you click on that row, you will see the response has data on the latitude and longitude for that vehicle. Let's take advantage of this to lookup another vehicle's location.
 
 11. Right click on that row and select "Send to Repeater" or type Ctrl-R.
 
-    ![image-20240506133054787](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506133054787.png)
+    ![image-20240507190014067](Files/image-20240507190014067.png)
 
 12. Repeater is a tool that allows us to manually tweak a request and then send it to the API to see what difference we get in the response. Click on the "Reapter" tab and you should see our request ready to tweak.
 
-    ![image-20240506133547715](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506133547715.png)
+    ![image-20240507190020381](Files/image-20240507190020381.png)
 
 13. Now highlight the guid part of the GET request and paste in the guid of the other vehicle. Next select the "Send" button.
 
 14. Note that you should see the sensitive information (e.g., longitude and latitude) in the response.
 
-    ![image-20240506134048845](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506134048845.png)
+    ![image-20240507190026166](Files/image-20240507190026166.png)
 
 15. Challenge completed
 
@@ -92,21 +92,21 @@ For this second challenge, we will attempt to access sensitive information in th
 
 4. Notice in the response windows the "report_link" parameter.
 
-   ![image-20240506172821952](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506172821952.png)
+   ![image-20240507190030975](Files/image-20240507190030975.png)
 
 5. Let's attempt browse to that URL.
 
-   ![image-20240506172934731](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506172934731.png)
+   ![image-20240507190035293](Files/image-20240507190035293.png)
 
 6. Let's build a request with the proper JWT and see if we can manually get to the report. Go back to the Proxy HTTP History window and look for the request you just made to /workshop/api/mechanic. Right click on it or use Ctrl-R and send it to repeater.
 
 7. In the Proxy HTTP History window, click back on any of the rows that show they contain a JWT. Then in the request window, highlight the Authorization line and copy the whole line with the bearer token.
 
-   ![image-20240506173353419](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506173353419.png)
+   ![image-20240507190039158](Files/image-20240507190039158.png)
 
 8. Click on the Repeater tab and you should see the request ready to be tweaked. Somewhere in the request header paste in the Authorization line and then select "Share".
 
-   ![image-20240506173728558](C:\Users\Thomas.Freeman\\OneDrive - Sikich LLP\Documents\APISecTraining\appsec-train\Files\image-20240506173728558.png)
+   ![image-20240507190044402](Files/image-20240507190044402.png)
 
 9. The response should show you your request. Now change the "report_id=8" to "report_id=2" and select the "Send" button.
 
