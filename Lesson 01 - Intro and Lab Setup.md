@@ -5,7 +5,6 @@ We will be using the **c**ompletely **r**idiculous **API** (crAPI) applicati
 - crAPI GitHub page: [OWASP/crAPI: completely ridiculous API (crAPI) (github.com)](https://github.com/OWASP/crAPI)
 - crAPI Challenges: [crAPI/docs/challenges.md at develop · OWASP/crAPI (github.com)](https://github.com/OWASP/crAPI/blob/develop/docs/challenges.md)
 
-  
 
 In order to explore the crAPI vulnerabilities we will use Burpsuite Community Edition (Burp). You could also use Postman, Hopscotch or any other web proxy application that allows you to intercept and modify requests. Burp Suite is a tool commonly used by penetration testers and assessors because of its ability to decode hashes, modify JWT tokens, send requests repeatedly with small changes, fuzzing. It is extendable with plugins and the Pro version includes additional features including an automatic scanner to look for common vulnerabilities.
 

@@ -25,12 +25,12 @@ For this training we are going to work through the challenges mostly in order bu
 - Increase account balance to more than $1000
 - Change the internal video properties
 14. **_API7: 2023_ Server Side Request Forgery** _(10 minutes)_
-- Force the API Service to make a request to [SummitCU.com](https://SummitCU.com "https://SummitCU.com")
+- Force the API Service to make a request to [https://ipinfo.io/ip](https://ipinfo.io/ip)
 16. **DEBRIEF - Abusive Uses** _(10 minutes)_
 17. _**Other1**_ **NoSQL Injection** _(10 minutes)_
 - Free Coupons
 19. **_Other2_ SQL Injection** _(10 minutes)_
-- Redeem an already redeemed coupon
+- Dump SQL database
 21. **_Other3_ Unauthenticated Access** _(5 minutes)_
 - Anonymous access of order details
 23. **_Other4_ JWTs** _(15 minutes)_
