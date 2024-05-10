@@ -66,7 +66,6 @@ crAPI will have the following applications preinstalled:
 - Select “SignUp”
 - Fill in the form with any fake information you like. (note: all fields must be filled in).
 
-  ![](Files/image%203.png)
 7. Login with the newly created account
 8. Add a vehicle
 
