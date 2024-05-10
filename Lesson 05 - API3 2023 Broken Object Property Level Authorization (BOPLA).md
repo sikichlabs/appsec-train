@@ -57,7 +57,7 @@ For this challenge we will combine a business logic flaw and a mass assignment f
 
 8. Click on the repeater tab and you should see the request ready to be tweaked.
 
-9. Next change the HTTP Method from "GET" to "PUT" (which is used when modifying an object in REST APIs). Add a simple JSON payload that updates the "status" to "returned". Then click on "Send".
+9. Next change the HTTP Method from "GET" to "PUT" (which is used when modifying an object in REST APIs). Add a simple JSON payload that updates the "status" to "returned". Then click on "Send". (NOTE: there needs to be a blank line between the request header and the request payload.)
 
    ![image-20240507190144746](Files/image-20240507190144746.png)
 

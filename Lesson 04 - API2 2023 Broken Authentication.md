@@ -18,9 +18,9 @@ We are going to use a combination of the last two (2) options for this example.
 
 When we were browsing in the earlier labs, we noted other user information in the "Community" responses. Including Author ID and email addresses. So we will log out and take a look at the login page. You will notice that there is a "Forgot Password" button. If we use this to reset our own password, we will receive an email from the system with a four (4) digit one time password (OTP).
 
-The problem with four (4) digit OTPs is that if the system does not have rate limiting or throttling we can quickly send  0001 to 9999 requests to discover the OTP for this user. As it turns out, crAPI does have rate limiting on version 3 of their API. But if there is a version 3, then there is probably a version 2. So we send our requests to change the password for another user using version 2 and find that there is no rate limiting in place. This allows us to get the code.
+The problem with four (4) digit OTPs is that if the system does not have rate limiting or throttling we can quickly send  0001 to 9999 requests to discover the OTP for this user. As it turns out, crAPI does have rate limiting on version 3 of their API. But if there is a version 3, then there is probably a version 2. So we send our requests to change the password for another user using version 2 and find and use a smaller range to avoid. This will allow us to get the code by simulating the method an attacker would use.
 
-NOTE: We are using the Community Edition of Burp Suite which has throttling built in so that you will want to purchase the Pro version. So for this lab, we will work through the process but when we attempt to send multiple OTPs, we will view the email to find the real OTP and limit our search to a range that allows you to complete this lab more quickly.
+NOTE: We are using the Community Edition of Burp Suite which has throttling built in to encourage you to purchase the Pro version. Since our requests will be throttled we will need to limit the number of requests we send to speed up the lab. We will work through the process but when we attempt to send multiple OTPs, we will view the email to find the real OTP and limit our search to a range of about 4 to 5 numbers so you can complete this lab more quickly.
 
 #### Lab Steps
 
@@ -66,7 +66,7 @@ NOTE: We are using the Community Edition of Burp Suite which has throttling buil
 
 15. Now click on the "Payloads" menu item.
 
-16. We need to change the "Payload type" to Numbers. Make the "From" and "To" be a 5 digit range that includes the OTP you know from the email. (Again, in a real attack, we would not know that number but using the Pro version of Burp Suite would make the attack very quick to search all 9999 numbers.) Finally, change the "Min integer digits" to 4 and select "Start Attack'"
+16. We need to change the "Payload type" to Numbers. Make the "From" and "To" be a range of about 5 numbers that includes the OTP you know from the email. (Again, in a real attack, we would not know that number but using the Pro version of Burp Suite would make the attack very quick to search all 9999 numbers.) Finally, change the "Min integer digits" to 4 and select "Start Attack'"
 
     ![image-20240507190120628](Files/image-20240507190120628.png)
 
