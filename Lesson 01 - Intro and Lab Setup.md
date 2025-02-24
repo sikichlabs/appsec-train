@@ -28,9 +28,9 @@ Everything should be ready to start training at this point.
 
 ### Few things to get you started:
 
-**Username:** _scudev_
+**Username:**
 
-**Password:** _scudev_
+**Password:**
 
 The user is part of the sudo group and can perform administrative tasks.
 
